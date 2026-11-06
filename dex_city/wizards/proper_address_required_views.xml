@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_proper_address_required_wizard_form" model="ir.ui.view">
+        <field name="name">dex.city.proper.address.required.wizard.form</field>
+        <field name="model">dex.city.proper.address.required.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Set Proper Address before continuing">
+                <sheet>
+                    <field name="quotation_wizard_id" invisible="1"/>
+                    <field name="invalid_partner_ids" invisible="1"/>
+                    <field name="has_selectable_partner" invisible="1"/>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Address setup required.</strong>
+                        Complete the invoice and shipping addresses before continuing.
+                    </div>
+                    <group col="4">
+                        <field name="order_id" string="Sale Order" required="0"
+                               options="{'no_open': True}"/>
+                        <field name="operation" string="Requested Action"/>
+                    </group>
+                    <separator string="Addresses Requiring Setup" colspan="4"/>
+                    <group col="4">
+                        <field name="invalid_address_summary"
+                               string="Address Status" colspan="3"/>
+                        <field name="partner_id" string="Address to Update"
+                               colspan="3"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'invisible': [('has_selectable_partner', '=', False)],
+                                       'required': [('has_selectable_partner', '=', True)]}"/>
+                    </group>
+                    <div class="alert alert-info" role="alert"
+                         attrs="{'invisible': [('has_selectable_partner', '=', True)]}">
+                        Select the missing invoice or shipping partner on the Sale Order first.
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_set_selected_address"
+                            string="Set Address" icon="fa-map-marker"
+                            type="object" class="btn-primary"
+                            attrs="{'invisible': [('has_selectable_partner', '=', False)]}"/>
+                    <button name="action_retry" string="Check Again"
+                            type="object" class="btn-secondary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

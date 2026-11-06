@@ -1,0 +1,1000 @@
+id,name,code,phone_code,vat_label,name_position,address_format,dex_geonames_postal_supported
+base.ad,Andorra,AD,376,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ae,United Arab Emirates,AE,971,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.af,Afghanistan,AF,93,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ag,Antigua and Barbuda,AG,1268,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ai,Anguilla,AI,1264,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.al,Albania,AL,355,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.am,Armenia,AM,374,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ao,Angola,AO,244,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.aq,Antarctica,AQ,672,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ar,Argentina,AR,54,CUIT,before,"%(street)s
+%(street2)s
+%(city)s %(state_name)s %(zip)s
+%(country_name)s",False
+base.as,American Samoa,AS,1684,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.at,Austria,AT,43,USt,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.au,Australia,AU,61,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.aw,Aruba,AW,297,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ax,Åland Islands,AX,358,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.az,Azerbaijan,AZ,994,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ba,Bosnia and Herzegovina,BA,387,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bb,Barbados,BB,1246,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bd,Bangladesh,BD,880,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.be,Belgium,BE,32,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.bf,Burkina Faso,BF,226,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bg,Bulgaria,BG,359,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bh,Bahrain,BH,973,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bi,Burundi,BI,257,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bj,Benin,BJ,229,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bl,Saint Barthélémy,BL,590,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bm,Bermuda,BM,1441,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bn,Brunei Darussalam,BN,673,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bo,Bolivia,BO,591,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bq,"Bonaire, Sint Eustatius and Saba",BQ,599,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.br,Brazil,BR,55,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s
+%(zip)s
+%(country_name)s",False
+base.bs,Bahamas,BS,1242,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bt,Bhutan,BT,975,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bv,Bouvet Island,BV,55,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bw,Botswana,BW,267,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.by,Belarus,BY,375,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.bz,Belize,BZ,501,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ca,Canada,CA,1,HST,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cc,Cocos (Keeling) Islands,CC,61,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cf,Central African Republic,CF,236,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cd,Democratic Republic of the Congo,CD,242,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cg,Congo,CG,243,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ch,Switzerland,CH,41,,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.ci,Côte d'Ivoire,CI,225,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ck,Cook Islands,CK,682,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cl,Chile,CL,56,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cm,Cameroon,CM,237,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cn,China,CN,86,,before,"%(country_name)s, %(zip)s
+%(state_name)s %(city)s %(street)s %(street2)s",False
+base.co,Colombia,CO,57,NIT,before,"%(street)s
+%(street2)s
+%(city)s %(state_name)s %(zip)s
+%(country_name)s",False
+base.cr,Costa Rica,CR,506,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cu,Cuba,CU,53,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cv,Cape Verde,CV,238,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cw,Curaçao,CW,599,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cx,Christmas Island,CX,61,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cy,Cyprus,CY,357,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.cz,Czech Republic,CZ,420,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.de,Germany,DE,49,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.dj,Djibouti,DJ,253,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.dk,Denmark,DK,45,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.dm,Dominica,DM,1767,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.do,Dominican Republic,DO,1849,RNC,before,"%(street)s
+%(street2)s
+%(city)s %(state_name)s %(zip)s
+%(country_name)s",False
+base.dz,Algeria,DZ,213,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ec,Ecuador,EC,593,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ee,Estonia,EE,372,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.eg,Egypt,EG,20,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.eh,Western Sahara,EH,212,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.er,Eritrea,ER,291,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.es,Spain,ES,34,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.et,Ethiopia,ET,251,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.fi,Finland,FI,358,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.fj,Fiji,FJ,679,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.fk,Falkland Islands,FK,500,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.fm,Micronesia,FM,691,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.fo,Faroe Islands,FO,298,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.fr,France,FR,33,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.ga,Gabon,GA,241,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gd,Grenada,GD,1473,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ge,Georgia,GE,995,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gf,French Guiana,GF,594,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gh,Ghana,GH,233,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gi,Gibraltar,GI,350,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gg,Guernsey,GG,44,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gl,Greenland,GL,299,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gm,Gambia,GM,220,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gn,Guinea,GN,224,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gp,Guadeloupe,GP,590,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gq,Equatorial Guinea,GQ,240,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gr,Greece,GR,30,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gs,South Georgia and the South Sandwich Islands,GS,500,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gt,Guatemala,GT,502,NIT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gu,Guam,GU,1671,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gw,Guinea-Bissau,GW,245,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.gy,Guyana,GY,592,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.hk,Hong Kong,HK,852,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.hm,Heard Island and McDonald Islands,HM,672,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.hn,Honduras,HN,504,RTN,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.hr,Croatia,HR,385,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s 
+%(country_name)s",False
+base.ht,Haiti,HT,509,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.hu,Hungary,HU,36,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.id,Indonesia,ID,62,NPWP,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ie,Ireland,IE,353,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.il,Israel,IL,972,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.im,Isle of Man,IM,44,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.in,India,IN,91,GSTIN,before,"%(street)s
+%(street2)s
+%(city)s %(zip)s
+%(state_name)s %(state_code)s
+%(country_name)s",False
+base.io,British Indian Ocean Territory,IO,246,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.iq,Iraq,IQ,964,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ir,Iran,IR,98,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.is,Iceland,IS,354,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.it,Italy,IT,39,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.je,Jersey,JE,44,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.jm,Jamaica,JM,1876,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.jo,Jordan,JO,962,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.jp,Japan,JP,81,,after,"%(zip)s
+%(state_name)s %(city)s
+%(street)s
+%(street2)s
+%(country_name)s",False
+base.ke,Kenya,KE,254,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kg,Kyrgyzstan,KG,996,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kh,Cambodia,KH,855,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ki,Kiribati,KI,686,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.km,Comoros,KM,269,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kn,Saint Kitts and Nevis,KN,1869,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kp,North Korea,KP,850,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kr,South Korea,KR,82,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kw,Kuwait,KW,965,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ky,Cayman Islands,KY,1345,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.kz,Kazakhstan,KZ,7,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.la,Laos,LA,856,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lb,Lebanon,LB,961,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lc,Saint Lucia,LC,1758,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.li,Liechtenstein,LI,423,,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.lk,Sri Lanka,LK,94,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lr,Liberia,LR,231,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ls,Lesotho,LS,266,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lt,Lithuania,LT,370,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lu,Luxembourg,LU,352,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.lv,Latvia,LV,371,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ly,Libya,LY,218,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ma,Morocco,MA,212,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mc,Monaco,MC,377,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.md,Moldova,MD,373,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.me,Montenegro,ME,382,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mf,Saint Martin (French part),MF,590,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mg,Madagascar,MG,261,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mh,Marshall Islands,MH,692,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mk,"Macedonia, the former Yugoslav Republic of",MK,389,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ml,Mali,ML,223,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mm,Myanmar,MM,95,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mn,Mongolia,MN,976,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mo,Macau,MO,853,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mp,Northern Mariana Islands,MP,1670,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mq,Martinique,MQ,596,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mr,Mauritania,MR,222,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ms,Montserrat,MS,1664,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mt,Malta,MT,356,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mu,Mauritius,MU,230,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mv,Maldives,MV,960,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mw,Malawi,MW,265,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mx,Mexico,MX,52,RFC,before,"%(street)s %(street2)s
+%(zip)s %(city)s, %(state_code)s
+%(country_name)s",False
+base.my,Malaysia,MY,60,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.mz,Mozambique,MZ,258,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.na,Namibia,NA,264,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nc,New Caledonia,NC,687,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ne,Niger,NE,227,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nf,Norfolk Island,NF,672,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ng,Nigeria,NG,234,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ni,Nicaragua,NI,505,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nl,Netherlands,NL,31,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.no,Norway,NO,47,,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.np,Nepal,NP,977,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nr,Nauru,NR,674,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nu,Niue,NU,683,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.nz,New Zealand,NZ,64,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.om,Oman,OM,968,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pa,Panama,PA,507,,before,"%(street)s
+%(street2)s
+%(city)s %(state_name)s %(zip)s
+%(country_name)s",False
+base.pe,Peru,PE,51,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pf,French Polynesia,PF,689,N° Tahiti,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pg,Papua New Guinea,PG,675,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ph,Philippines,PH,63,,before,%(street)s,True
+base.pk,Pakistan,PK,92,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pl,Poland,PL,48,VAT,before,"%(street)s
+%(street2)s
+%(zip)s %(city)s
+%(country_name)s",False
+base.pm,Saint Pierre and Miquelon,PM,508,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pn,Pitcairn Islands,PN,64,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pr,Puerto Rico,PR,1939,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ps,State of Palestine,PS,970,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pt,Portugal,PT,351,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.pw,Palau,PW,680,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.py,Paraguay,PY,595,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.qa,Qatar,QA,974,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.re,Réunion,RE,262,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ro,Romania,RO,40,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.rs,Serbia,RS,381,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ru,Russian Federation,RU,7,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.rw,Rwanda,RW,250,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sa,Saudi Arabia,SA,966,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sb,Solomon Islands,SB,677,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sc,Seychelles,SC,248,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sd,Sudan,SD,249,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.se,Sweden,SE,46,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sg,Singapore,SG,65,GST No.,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sh,"Saint Helena, Ascension and Tristan da Cunha",SH,290,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.si,Slovenia,SI,386,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sj,Svalbard and Jan Mayen,SJ,47,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sk,Slovakia,SK,421,VAT,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sl,Sierra Leone,SL,232,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sm,San Marino,SM,378,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sn,Senegal,SN,221,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.so,Somalia,SO,252,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sr,Suriname,SR,597,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ss,South Sudan,SS,211,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.st,São Tomé and Príncipe,ST,239,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sv,El Salvador,SV,503,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sx,Sint Maarten (Dutch part),SX,1721,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sy,Syria,SY,963,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.sz,Swaziland,SZ,268,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tc,Turks and Caicos Islands,TC,1649,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.td,Chad,TD,235,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tf,French Southern Territories,TF,262,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tg,Togo,TG,228,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.th,Thailand,TH,66,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tj,Tajikistan,TJ,992,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tk,Tokelau,TK,690,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tm,Turkmenistan,TM,993,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tn,Tunisia,TN,216,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.to,Tonga,TO,676,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tl,Timor-Leste,TL,670,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tr,Turkey,TR,90,,before,"%(street)s
+%(street2)s
+%(city)s %(state_name)s %(zip)s
+%(country_name)s",False
+base.tt,Trinidad and Tobago,TT,1868,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tv,Tuvalu,TV,688,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tw,Taiwan,TW,886,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.tz,Tanzania,TZ,255,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ua,Ukraine,UA,380,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ug,Uganda,UG,256,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.uk,United Kingdom,GB,44,VAT,before,"%(street)s
+%(street2)s
+%(city)s
+%(state_name)s
+%(zip)s
+%(country_name)s",False
+base.um,USA Minor Outlying Islands,UM,699,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.us,United States,US,1,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.uy,Uruguay,UY,598,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.uz,Uzbekistan,UZ,998,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.va,Holy See (Vatican City State),VA,379,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.vc,Saint Vincent and the Grenadines,VC,1784,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ve,Venezuela,VE,58,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.vg,Virgin Islands (British),VG,1284,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.vi,Virgin Islands (USA),VI,1340,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.vn,Vietnam,VN,84,,before,"%(street)s
+%(street2)s
+%(city)s
+%(state_name)s %(country_name)s",False
+base.vu,Vanuatu,VU,678,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.wf,Wallis and Futuna,WF,681,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ws,Samoa,WS,685,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.ye,Yemen,YE,967,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.yt,Mayotte,YT,262,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.za,South Africa,ZA,27,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.zm,Zambia,ZM,260,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.zw,Zimbabwe,ZW,263,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False
+base.xk,Kosovo,XK,383,,before,"%(street)s
+%(street2)s
+%(city)s %(state_code)s %(zip)s
+%(country_name)s",False

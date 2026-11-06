@@ -1,0 +1,46 @@
+{
+  "database": "dc20260727",
+  "exported_at_utc": "2026-10-06T07:15:36.431808Z",
+  "source_module_version": "13.0.2.2.42",
+  "files": [
+    {
+      "filename": "res.country.csv",
+      "model": "res.country",
+      "records": 250,
+      "sha256": "de51e004e5bfb487c4f00c85c892baa1df6cb37d3b44b4515be88f53a7c0719e"
+    },
+    {
+      "filename": "res.country.state.csv",
+      "model": "res.country.state",
+      "records": 1467,
+      "sha256": "fc5a1ec266652138d39d2309b9e0128fae9457062ebf72c6cfbe70ab9c55b0c1"
+    },
+    {
+      "filename": "res.city.csv",
+      "model": "res.city",
+      "records": 1551,
+      "sha256": "6e7d9f16eb057cdfd46dc0c87df6c6ca483bddfd9019a9b7a0e3ad672f765fa5"
+    },
+    {
+      "filename": "dex.city.postal.code.csv",
+      "model": "dex.city.postal.code",
+      "records": 1899,
+      "sha256": "1b050c538bcb0a0f1a27d529ef94ea7bb29399d38f9385d76a5cd79e898e0942"
+    },
+    {
+      "filename": "dex.city.barangay.csv",
+      "model": "dex.city.barangay",
+      "records": 42011,
+      "sha256": "47ecb8a5c4257777e76742fd80b40480ac3739dfd91b1817cddb7748d9fdd0b3"
+    }
+  ],
+  "registered_external_ids": 50,
+  "area_links": 87,
+  "city_links": 38609,
+  "unassigned_cities": 3402,
+  "manual_areas": 0,
+  "csv_replay": "passed (all location writes rolled back)",
+  "ownership": "No location records had geonames_import_id; import jobs and source archives are not included.",
+  "fresh_install_validation": "Passed in isolated database with exact deployed location models and all five CSVs; counts, exported fields, and compatibility links matched. Full application dependency reinstall was not performed.",
+  "package_version": "13.0.2.2.43"
+}

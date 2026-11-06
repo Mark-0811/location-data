@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="access_dex_city_set_address_wizard_user" model="ir.model.access">
+        <field name="name">dex.city.set.address.wizard user</field>
+        <field name="model_id" ref="model_dex_city_set_address_wizard"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+    <record id="access_dex_city_proper_address_required_wizard_user" model="ir.model.access">
+        <field name="name">dex.city.proper.address.required.wizard user</field>
+        <field name="model_id" ref="model_dex_city_proper_address_required_wizard"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+    <record id="access_dex_city_barangay" model="ir.model.access">
+        <field name="name">dex.city.barangay</field>
+        <field name="model_id" ref="model_dex_city_barangay"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_dex_city_postal_code_user" model="ir.model.access">
+        <field name="name">dex.city.postal.code user</field>
+        <field name="model_id" ref="model_dex_city_postal_code"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_res_city_delivery_address_sales" model="ir.model.access">
+        <field name="name">res.city delivery address sales read</field>
+        <field name="model_id" ref="model_res_city"/>
+        <field name="group_id" ref="dex_city.group_delivery_address_manager"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_res_country_location_data_system" model="ir.model.access">
+        <field name="name">res.country location data system</field>
+        <field name="model_id" ref="base.model_res_country"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_res_country_state_location_data_system" model="ir.model.access">
+        <field name="name">res.country.state location data system</field>
+        <field name="model_id" ref="base.model_res_country_state"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_res_city_location_data_system" model="ir.model.access">
+        <field name="name">res.city location data system</field>
+        <field name="model_id" ref="model_res_city"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_dex_city_barangay_system" model="ir.model.access">
+        <field name="name">dex.city.barangay system</field>
+        <field name="model_id" ref="model_dex_city_barangay"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_dex_city_postal_code_system" model="ir.model.access">
+        <field name="name">dex.city.postal.code system</field>
+        <field name="model_id" ref="model_dex_city_postal_code"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_dex_city_data_import_system" model="ir.model.access">
+        <field name="name">dex.city.data.import system</field>
+        <field name="model_id" ref="model_dex_city_data_import"/>
+        <field name="group_id" ref="base.group_system"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_preprinted_document_address" inherit_id="dex_invoice_preprinted.report_invoice_preprinted_document" priority="50">
+        <xpath expr="//div[@style='position:absolute; left: 53mm; width: 60mm; ']" position="replace">
+            <div style="position:absolute; left: 53mm; width: 60mm; ">
+                <t t-if="o.partner_id">
+                    <t t-foreach="o.partner_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[@style='position:absolute; left: 113mm; width: 55mm; ']" position="replace">
+            <div style="position:absolute; left: 113mm; width: 55mm; ">
+                <t t-if="o.partner_shipping_id">
+                    <t t-foreach="o.partner_shipping_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="invoice_preprinted_header_address" inherit_id="dex_invoice_preprinted.invoice_preprinted_header" priority="50">
+        <xpath expr="//td[@width='30%']/div[@style='min-height:103px']" position="replace">
+            <div style="min-height:103px">
+                <t t-if="o.partner_id">
+                    <t t-foreach="o.partner_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//td[@width='23%']/t[@t-else]" position="replace">
+            <t t-else="">
+                <t t-if="o.partner_shipping_id">
+                    <t t-foreach="o.partner_shipping_id._dex_address_lines()" t-as="address_line">
+                        <span class="ifont9" t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="report_invoice_preprinted_document_v2_address" inherit_id="dex_invoice_preprinted.report_invoice_preprinted_document_v2" priority="50">
+        <xpath expr="//div[@style='position:absolute; left: 53mm; width: 60mm; ']" position="replace">
+            <div style="position:absolute; left: 53mm; width: 60mm; ">
+                <t t-if="o.partner_id">
+                    <t t-foreach="o.partner_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[@style='position:absolute; left: 113mm; width: 55mm; ']" position="replace">
+            <div style="position:absolute; left: 113mm; width: 55mm; ">
+                <t t-if="o.partner_shipping_id">
+                    <t t-foreach="o.partner_shipping_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="invoice_preprinted_header_v2_address" inherit_id="dex_invoice_preprinted.invoice_preprinted_header_v2" priority="50">
+        <xpath expr="//td[@width='30%']/div[@style='min-height:103px']" position="replace">
+            <div style="min-height:103px">
+                <t t-if="o.partner_id">
+                    <t t-foreach="o.partner_id._dex_address_lines()" t-as="address_line">
+                        <span t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//td[@width='23%']/t[@t-else]" position="replace">
+            <t t-else="">
+                <t t-if="o.partner_shipping_id">
+                    <t t-foreach="o.partner_shipping_id._dex_address_lines()" t-as="address_line">
+                        <span class="ifont9" t-esc="address_line"/><br/>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

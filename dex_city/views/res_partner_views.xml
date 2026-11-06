@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_set_address" model="ir.ui.view">
+        <field name="name">res.partner.form.set.proper.address</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street' or @name='street2' or @name='city' or @name='state_id' or @name='zip' or @name='country_id']" position="attributes">
+                <attribute name="readonly">0</attribute>
+                <attribute name="attrs">{'readonly': [('dex_is_customer_address', '=', True)]}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]" position="inside">
+                <field name="is_proper_address_set" invisible="1"/>
+                <field name="dex_is_customer_address" invisible="1"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street']" position="before">
+                <button name="action_set_proper_address" type="object"
+                        string="Set Address" icon="fa-map-marker"
+                        class="btn btn-primary"
+                        groups="dex_city.group_delivery_address_manager"
+                        attrs="{'invisible': [('dex_is_customer_address', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_address_form_set_address" model="ir.ui.view">
+        <field name="name">res.partner.address.form.set.proper.address</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_address_form"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street' or @name='street2' or @name='city' or @name='state_id' or @name='zip' or @name='country_id']" position="attributes">
+                <attribute name="readonly">0</attribute>
+                <attribute name="attrs">{'readonly': [('dex_is_customer_address', '=', True)]}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]" position="inside">
+                <field name="is_proper_address_set" invisible="1"/>
+                <field name="dex_is_customer_address" invisible="1"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street']" position="before">
+                <button name="action_set_proper_address" type="object"
+                        string="Set Address" icon="fa-map-marker"
+                        class="btn btn-primary"
+                        groups="dex_city.group_delivery_address_manager"
+                        attrs="{'invisible': [('dex_is_customer_address', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_short_form_set_address" model="ir.ui.view">
+        <field name="name">res.partner.short.form.set.proper.address</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_short_form"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street' or @name='street2' or @name='city' or @name='state_id' or @name='zip' or @name='country_id']" position="attributes">
+                <attribute name="readonly">0</attribute>
+                <attribute name="attrs">{'readonly': [('dex_is_customer_address', '=', True)]}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]" position="inside">
+                <field name="is_proper_address_set" invisible="1"/>
+                <field name="dex_is_customer_address" invisible="1"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_address_format')]/field[@name='street']" position="before">
+                <button name="action_set_proper_address" type="object"
+                        string="Set Address" icon="fa-map-marker"
+                        class="btn btn-primary"
+                        groups="dex_city.group_delivery_address_manager"
+                        attrs="{'invisible': [('dex_is_customer_address', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,26 @@
+/* Delivery and partner address wizard layout */
+.dex_city_address_wizard_form .o_form_sheet_bg {
+    padding: 0 24px;
+}
+
+.dex_city_address_wizard_form .o_form_sheet {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 36px 24px;
+}
+
+.dex_city_address_wizard_form .o_group {
+    margin-bottom: 22px;
+}
+
+.dex_city_address_wizard_form .o_form_label {
+    min-width: 240px;
+}
+
+.dex_city_address_wizard_form .o_row {
+    align-items: center;
+}
+
+.dex_city_address_wizard_form .o_form_textarea {
+    min-height: 70px;
+}

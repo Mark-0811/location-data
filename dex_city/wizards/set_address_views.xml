@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <record id="view_set_address_wizard_form" model="ir.ui.view">
+              <field name="name">dex.city.set.address.wizard.form</field>
+              <field name="model">dex.city.set.address.wizard</field>
+              <field name="arch" type="xml">
+                     <form string="Set Proper Address" class="dex_city_address_wizard_form">
+                            <sheet>
+                                   <field name="partner_id" invisible="1"/>
+                                   <field name="sale_order_id" invisible="1"/>
+                                   <field name="parent_partner_id" invisible="1"/>
+                                   <field name="create_delivery_address" invisible="1"/>
+                                   <field name="show_address_form" invisible="1"/>
+                                   <field name="edit_delivery_address" invisible="1"/>
+                                   <field name="created_partner_id" invisible="1"/>
+                                   <field name="country_code" invisible="1"/>
+                                   <field name="postal_supported" invisible="1"/>
+                                   <field name="use_city_selection" invisible="1"/>
+                                   <field name="has_districts" invisible="1"/>
+                                   <field name="show_area_selection" invisible="1"/>
+                                   <field name="area_name" invisible="1"/>
+                                   <field name="district_name" invisible="1"/>
+                                   <field name="allowed_barangay_ids" invisible="1"/>
+                                   <field name="show_barangay_selection" invisible="1"/>
+                                   <group string="Existing Delivery Addresses"
+                           attrs="{'invisible': [('create_delivery_address', '=', False)]}">
+                                          <field name="delivery_address_ids" nolabel="1" options="{'no_open': True}">
+                                                 <tree string="Delivery Addresses" class="tree_no_open" create="false" edit="false" delete="false">
+                                                        <field name="name" string="Address Name"/>
+                                                        <field name="street" string="Address"/>
+                                                        <field name="city"/>
+                                                        <field name="state_id"/>
+                                                        <field name="zip"/>
+                                                        <button name="action_set_proper_address"
+                                        type="object"
+                                        string="Edit"
+                                        icon="fa-pencil"
+                                        class="btn btn-secondary btn-sm oe_inline"
+                                        context="{'dex_city_edit_delivery_address': True}"
+                                        groups="dex_city.group_delivery_address_manager"/>
+                                                 </tree>
+                                          </field>
+                                   </group>
+                                   <group string="Delivery Address" col="2"
+                           attrs="{'invisible': ['|', ('create_delivery_address', '=', False), ('show_address_form', '=', False)]}">
+                                          <field name="delivery_name"
+                               attrs="{'required': [('create_delivery_address', '=', True), ('show_address_form', '=', True)]}"
+                               placeholder="Branch, warehouse, site, or recipient name"/>
+                                   </group>
+                                   <group string="Location" col="2"
+                           attrs="{'invisible': [('show_address_form', '=', False)]}">
+                                          <field name="country_id"
+                               options="{'no_create': True, 'no_open': True}"/>
+                                          <field name="use_manual_location"
+                               attrs="{'invisible': [('country_code', '=', 'PH')]}"/>
+                                          <field name="state_id"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('use_manual_location', '=', False)],
+                                       'invisible': [('use_manual_location', '=', True)]}"/>
+                                          <field name="state_text"
+                               attrs="{'invisible': [('use_manual_location', '=', False)]}"/>
+                                          <field name="city_id"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('use_city_selection', '=', True)],
+                                       'invisible': [('use_city_selection', '=', False)],
+                                       'readonly': [('state_id', '=', False)]}"/>
+                                          <field name="city"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('use_city_selection', '=', False)],
+                                       'invisible': [('use_city_selection', '=', True)]}"/>
+                                          <field name="district_id"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('has_districts', '=', True)],
+                                       'invisible': [('has_districts', '=', False)],
+                                       'readonly': [('city_id', '=', False)]}"/>
+                                          <field name="postal_code_id" string="Area"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('show_area_selection', '=', True)],
+                                       'invisible': [('show_area_selection', '=', False)],
+                                       'readonly': [('city_id', '=', False)]}"/>
+                                          <field name="barangay_id"
+                               context="{'dex_area_name': area_name,
+                                         'dex_district_name': district_name,
+                                         'dex_city_id': city_id,
+                                         'dex_district_id': district_id}"
+                               options="{'no_create': True, 'no_open': True}"
+                               attrs="{'required': ['&amp;', ('show_address_form', '=', True), ('show_barangay_selection', '=', True)],
+                                       'invisible': ['|', ('country_code', '!=', 'PH'), ('show_barangay_selection', '=', False)],
+                                       'readonly': [('city_id', '=', False)]}"/>
+                                          <field name="zip" force_save="1"/>
+                                   </group>
+                                   <group string="Address Details" col="2"
+                           attrs="{'invisible': [('show_address_form', '=', False)]}">
+                                          <field name="street"
+                               attrs="{'required': [('show_address_form', '=', True)]}"
+                               placeholder="House/Unit No., Building, Street"/>
+                                          <field name="street2"
+                               placeholder="Subdivision, Floor, or additional details"/>
+                                   </group>
+                                   <group string="Complete Address Preview" col="2"
+                           attrs="{'invisible': [('show_address_form', '=', False)]}">
+                                          <field name="full_address" nolabel="1" readonly="1"/>
+                                   </group>
+                            </sheet>
+                            <footer>
+                                   <button name="action_open_new_delivery_address"
+                            string="Create New Delivery Address"
+                            type="object"
+                            class="btn-primary"
+                            groups="sales_team.group_sale_salesman"
+                            attrs="{'invisible': ['|', ('create_delivery_address', '=', False), ('show_address_form', '=', True)]}"/>
+                                   <button name="action_apply" string="Set Address"
+                            type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': ['|', ('create_delivery_address', '=', True), ('show_address_form', '=', False)]}"/>
+                                   <button name="action_apply" string="Create Delivery Address"
+                            type="object"
+                            class="btn-primary"
+                            groups="sales_team.group_sale_salesman"
+                            attrs="{'invisible': ['|', ('create_delivery_address', '=', False), ('show_address_form', '=', False)]}"/>
+                                   <button string="Cancel" special="cancel" class="btn-secondary"/>
+                            </footer>
+                     </form>
+              </field>
+       </record>
+</odoo>

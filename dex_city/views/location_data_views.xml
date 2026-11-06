@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dex_city_country_tree" model="ir.ui.view">
+        <field name="name">dex.city.country.tree</field>
+        <field name="model">res.country</field>
+        <field name="arch" type="xml">
+            <tree string="Countries" create="true" edit="true" delete="false">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_country_form" model="ir.ui.view">
+        <field name="name">dex.city.country.form</field>
+        <field name="model">res.country</field>
+        <field name="arch" type="xml">
+            <form string="Country" create="true" edit="true" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Country"/>
+                        <h1><field name="name" placeholder="e.g. Philippines"/></h1>
+                    </div>
+                    <group string="Country Details">
+                        <group>
+                            <field name="code" string="Country Code" placeholder="e.g. PH"/>
+                        </group>
+                        <group>
+                            <field name="dex_geonames_postal_supported" string="Postal Data Available" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Provinces / States">
+                            <field name="dex_state_ids" nolabel="1">
+                                <tree string="Provinces / States" create="true" edit="true" delete="false">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                </tree>
+                                <form string="Province / State" create="true" edit="true" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name" string="Province / State"/>
+                                            <h1><field name="name" placeholder="e.g. Metro Manila"/></h1>
+                                        </div>
+                                        <group>
+                                            <field name="code"/>
+                                            <field name="country_id" readonly="1"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dex_city_country_search" model="ir.ui.view">
+        <field name="name">dex.city.country.search</field>
+        <field name="model">res.country</field>
+        <field name="arch" type="xml">
+            <search string="Search Countries">
+                <field name="name"/>
+                <field name="code" string="Country Code"/>
+                <separator/>
+                <filter name="country_with_postal" string="With Postal Data" domain="[('dex_geonames_postal_supported', '=', True)]"/>
+                <filter name="country_without_postal" string="Without Postal Data" domain="[('dex_geonames_postal_supported', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dex_city_countries" model="ir.actions.act_window">
+        <field name="name">Countries</field>
+        <field name="res_model">res.country</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_country_tree"/>
+        <field name="search_view_id" ref="view_dex_city_country_search"/>
+    </record>
+
+    <record id="action_dex_city_countries_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_dex_city_country_tree"/>
+        <field name="act_window_id" ref="action_dex_city_countries"/>
+    </record>
+
+    <record id="action_dex_city_countries_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dex_city_country_form"/>
+        <field name="act_window_id" ref="action_dex_city_countries"/>
+    </record>
+
+    <record id="view_dex_city_state_tree" model="ir.ui.view">
+        <field name="name">dex.city.state.tree</field>
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <tree string="Provinces / States" create="true" edit="true" delete="false">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_state_form" model="ir.ui.view">
+        <field name="name">dex.city.state.form</field>
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <form string="Province / State" create="true" edit="true" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Province / State"/>
+                        <h1><field name="name" placeholder="e.g. Metro Manila"/></h1>
+                    </div>
+                    <group string="Administrative Details">
+                        <group>
+                            <field name="code"/>
+                            <field name="country_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Cities / Municipalities">
+                            <field name="dex_city_ids" nolabel="1"
+                                   context="{'default_state_id': id, 'default_country_id': country_id}">
+                                <tree string="Cities / Municipalities" create="true" edit="true" delete="false" decoration-muted="not active">
+                                    <field name="name" string="City / Municipality"/>
+                                    <field name="zipcode" string="ZIP Code"/>
+                                    <field name="active" invisible="1"/>
+                                </tree>
+                                <form string="City / Municipality" create="true" edit="true" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name" string="City / Municipality"/>
+                                            <h1><field name="name" placeholder="e.g. Makati City"/></h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="zipcode" string="ZIP Code"/>
+                                                <field name="psgc_code"/>
+                                            </group>
+                                            <group>
+                                                <field name="state_id" readonly="1" force_save="1"/>
+                                                <field name="country_id" readonly="1" force_save="1"/>
+                                                <field name="active" widget="boolean_toggle"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Source Information">
+                            <group>
+                            <field name="geonames_admin1_code" readonly="1"/>
+                            <field name="geonames_id" readonly="1"/>
+                            <field name="geonames_active" readonly="1"/>
+                            <field name="geonames_import_id" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dex_city_state_search" model="ir.ui.view">
+        <field name="name">dex.city.state.search</field>
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <search string="Search Provinces / States">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <separator/>
+                <filter name="state_manual" string="Manual" domain="[('geonames_id', '=', False)]"/>
+                <filter name="state_imported" string="Imported" domain="[('geonames_id', '!=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_state_country" string="Country" context="{'group_by': 'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dex_city_states" model="ir.actions.act_window">
+        <field name="name">Provinces / States</field>
+        <field name="res_model">res.country.state</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_state_tree"/>
+        <field name="search_view_id" ref="view_dex_city_state_search"/>
+        <field name="domain">['|', ('geonames_active', '=', True), ('geonames_id', '=', False)]</field>
+    </record>
+
+    <record id="action_dex_city_states_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_dex_city_state_tree"/>
+        <field name="act_window_id" ref="action_dex_city_states"/>
+    </record>
+
+    <record id="action_dex_city_states_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dex_city_state_form"/>
+        <field name="act_window_id" ref="action_dex_city_states"/>
+    </record>
+
+    <record id="view_dex_city_city_tree" model="ir.ui.view">
+        <field name="name">dex.city.city.tree</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <tree string="Cities and ZIP Codes" create="true" edit="true" delete="false" decoration-muted="not active">
+                <field name="name" string="City / Municipality"/>
+                <field name="zipcode" string="ZIP Code"/>
+                <field name="state_id" string="Province / State"/>
+                <field name="country_id"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_city_form" model="ir.ui.view">
+        <field name="name">dex.city.city.form</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <form string="City / Municipality" create="true" edit="true" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="City / Municipality"/>
+                        <h1><field name="name" placeholder="e.g. Makati City"/></h1>
+                    </div>
+                    <group string="Location Details">
+                        <group>
+                            <field name="zipcode" string="ZIP Code"/>
+                            <field name="state_id" string="Province / State"/>
+                            <field name="country_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Areas">
+                            <field name="dex_area_ids" nolabel="1"
+                                   context="{'default_city_id': id, 'default_state_id': state_id, 'default_country_id': country_id}">
+                                <tree string="Areas" create="true" edit="true" delete="false" decoration-muted="not active">
+                                    <field name="place_name" string="Area"/>
+                                    <field name="postal_code" string="ZIP Code"/>
+                                    <field name="dex_district_id"/>
+                                    <field name="active" invisible="1"/>
+                                </tree>
+                                <form string="Area" create="true" edit="true" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="place_name" string="Area"/>
+                                            <h1><field name="place_name" placeholder="e.g. Salcedo Village"/></h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="postal_code" string="ZIP Code"/>
+                                                <field name="dex_district_id"/>
+                                            </group>
+                                            <group>
+                                                <field name="city_id" readonly="1" force_save="1"/>
+                                                <field name="state_id" readonly="1" force_save="1"/>
+                                                <field name="country_id" readonly="1" force_save="1"/>
+                                                <field name="active" widget="boolean_toggle"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Classification">
+                            <group>
+                                <group>
+                                    <field name="psgc_code"/>
+                                </group>
+                                <group string="District Mapping">
+                                    <field name="dex_is_district" readonly="1"/>
+                                    <field name="dex_parent_city_id" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="GeoNames Source">
+                            <group>
+                                <group>
+                                    <field name="geonames_id" readonly="1"/>
+                                    <field name="geonames_ascii_name" readonly="1"/>
+                                    <field name="population" readonly="1"/>
+                                    <field name="geonames_modified_date" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="latitude" readonly="1"/>
+                                    <field name="longitude" readonly="1"/>
+                                    <field name="geonames_active" readonly="1"/>
+                                    <field name="geonames_has_postal" readonly="1"/>
+                                    <field name="geonames_import_id" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dex_city_city_search" model="ir.ui.view">
+        <field name="name">dex.city.city.search</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <search string="Search Cities and ZIP Codes">
+                <field name="name" string="City / Municipality"/>
+                <field name="zipcode" string="ZIP Code"/>
+                <field name="state_id" string="Province / State"/>
+                <field name="country_id"/>
+                <separator/>
+                <filter name="city_active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="city_archived" string="Archived" domain="[('active', '=', False)]" context="{'active_test': False}"/>
+                <separator/>
+                <filter name="city_manual" string="Manual" domain="[('geonames_id', '=', False)]"/>
+                <filter name="city_imported" string="Imported" domain="[('geonames_id', '!=', False)]"/>
+                <filter name="city_district" string="Districts" domain="[('dex_is_district', '=', True)]"/>
+                <separator/>
+                <filter name="city_with_zip" string="With ZIP Code" domain="[('zipcode', '!=', False)]"/>
+                <filter name="city_without_zip" string="Without ZIP Code" domain="[('zipcode', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_city_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="group_city_state" string="Province / State" context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dex_city_cities" model="ir.actions.act_window">
+        <field name="name">Cities and ZIP Codes</field>
+        <field name="res_model">res.city</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_city_tree"/>
+        <field name="search_view_id" ref="view_dex_city_city_search"/>
+        <field name="domain">['|', ('geonames_id', '=', False), '&amp;', ('geonames_active', '=', True), ('geonames_has_postal', '=', True)]</field>
+    </record>
+
+    <record id="action_dex_city_cities_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_dex_city_city_tree"/>
+        <field name="act_window_id" ref="action_dex_city_cities"/>
+    </record>
+
+    <record id="action_dex_city_cities_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dex_city_city_form"/>
+        <field name="act_window_id" ref="action_dex_city_cities"/>
+    </record>
+
+    <record id="view_dex_city_barangay_tree" model="ir.ui.view">
+        <field name="name">dex.city.barangay.tree</field>
+        <field name="model">dex.city.barangay</field>
+        <field name="arch" type="xml">
+            <tree string="Barangays" create="true" edit="true" delete="false">
+                <field name="name"/>
+                <field name="area_id"/>
+                <field name="city_id"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_barangay_form" model="ir.ui.view">
+        <field name="name">dex.city.barangay.form</field>
+        <field name="model">dex.city.barangay</field>
+        <field name="arch" type="xml">
+            <form string="Barangay" create="true" edit="true" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Barangay"/>
+                        <h1><field name="name" placeholder="e.g. Bel-Air"/></h1>
+                    </div>
+                    <group string="Address Hierarchy">
+                        <group>
+                            <field name="area_id"
+                                   domain="[('active', '=', True)]"
+                                   options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="city_id"
+                                   attrs="{'readonly': [('area_id', '!=', False)]}"
+                                   domain="[('active', '=', True), ('dex_is_district', '=', False)]"/>
+                        </group>
+                        <group>
+                            <field name="state_id" readonly="1"/>
+                            <field name="country_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="PSGC Details">
+                            <group>
+                                <field name="psgc_code"/>
+                                <field name="parent_psgc_code"/>
+                                <field name="city_psgc_code"/>
+                            </group>
+                        </page>
+                        <page string="Source Information">
+                            <group>
+                                <field name="locality_name" readonly="1"/>
+                                <field name="area_name" readonly="1"/>
+                                <field name="postal_code_ids" invisible="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dex_city_barangay_search" model="ir.ui.view">
+        <field name="name">dex.city.barangay.search</field>
+        <field name="model">dex.city.barangay</field>
+        <field name="arch" type="xml">
+            <search string="Search Barangays">
+                <field name="name"/>
+                <field name="area_id"/>
+                <field name="city_id"/>
+                <field name="area_name"/>
+                <field name="locality_name"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <separator/>
+                <filter name="barangay_with_city" string="With City" domain="[('city_id', '!=', False)]"/>
+                <filter name="barangay_without_city" string="Without City" domain="[('city_id', '=', False)]"/>
+                <filter name="barangay_with_area" string="With Area" domain="[('area_id', '!=', False)]"/>
+                <filter name="barangay_without_area" string="Without Area" domain="[('area_id', '=', False)]"/>
+                <separator/>
+                <filter name="barangay_with_area_name" string="With Area Name" domain="[('area_name', '!=', False)]"/>
+                <filter name="barangay_without_area_name" string="Without Area Name" domain="[('area_name', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_barangay_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="group_barangay_state" string="Province / State" context="{'group_by': 'state_id'}"/>
+                    <filter name="group_barangay_city" string="City / Municipality" context="{'group_by': 'city_id'}"/>
+                    <filter name="group_barangay_area" string="Area" context="{'group_by': 'area_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dex_city_barangays" model="ir.actions.act_window">
+        <field name="name">Barangays</field>
+        <field name="res_model">dex.city.barangay</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_barangay_tree"/>
+        <field name="search_view_id" ref="view_dex_city_barangay_search"/>
+        <field name="domain">[('state_id.country_id.code', '=', 'PH')]</field>
+    </record>
+
+    <record id="action_dex_city_barangays_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_dex_city_barangay_tree"/>
+        <field name="act_window_id" ref="action_dex_city_barangays"/>
+    </record>
+
+    <record id="action_dex_city_barangays_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dex_city_barangay_form"/>
+        <field name="act_window_id" ref="action_dex_city_barangays"/>
+    </record>
+
+    <record id="view_dex_city_postal_tree" model="ir.ui.view">
+        <field name="name">dex.city.postal.code.tree</field>
+        <field name="model">dex.city.postal.code</field>
+        <field name="arch" type="xml">
+            <tree string="Areas" create="true" edit="true" delete="false" decoration-muted="not active">
+                <field name="place_name" string="Area"/>
+                <field name="postal_code" string="ZIP Code"/>
+                <field name="city_id"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_postal_form" model="ir.ui.view">
+        <field name="name">dex.city.postal.code.form</field>
+        <field name="model">dex.city.postal.code</field>
+        <field name="arch" type="xml">
+            <form string="Area" create="true" edit="true" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="place_name" string="Area"/>
+                        <h1><field name="place_name" placeholder="e.g. Salcedo Village"/></h1>
+                    </div>
+                    <group string="Location Details">
+                        <group>
+                            <field name="postal_code" string="ZIP Code"/>
+                            <field name="city_id" string="City / Municipality"/>
+                            <field name="state_id" string="Province / State" readonly="1"/>
+                            <field name="country_id" readonly="1"/>
+                            <field name="dex_district_id"/>
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Barangays">
+                            <field name="primary_barangay_ids" nolabel="1">
+                                <tree string="Barangays" create="true" edit="true" delete="false">
+                                    <field name="name"/>
+                                    <field name="psgc_code"/>
+                                    <field name="city_id"/>
+                                    <field name="state_id"/>
+                                </tree>
+                                <form string="Barangay" create="true" edit="true" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name" string="Barangay"/>
+                                            <h1><field name="name" placeholder="e.g. Bel-Air"/></h1>
+                                        </div>
+                                        <group string="Address Hierarchy">
+                                            <group>
+                                                <field name="area_id" readonly="1"/>
+                                                <field name="city_id" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="state_id" readonly="1"/>
+                                                <field name="country_id" readonly="1"/>
+                                            </group>
+                                        </group>
+                                        <group string="PSGC Details">
+                                            <field name="psgc_code"/>
+                                            <field name="parent_psgc_code"/>
+                                            <field name="city_psgc_code"/>
+                                            <field name="locality_name"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Source Information">
+                            <field name="source_key" readonly="1" invisible="1"/>
+                            <group>
+                                <group>
+                                    <field name="admin1_code" readonly="1"/>
+                                    <field name="admin2_name" readonly="1"/>
+                                    <field name="admin2_code" readonly="1"/>
+                                    <field name="admin3_name" readonly="1"/>
+                                    <field name="admin3_code" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="latitude" readonly="1"/>
+                                    <field name="longitude" readonly="1"/>
+                                    <field name="accuracy" readonly="1"/>
+                                    <field name="geonames_import_id" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dex_city_postal_search" model="ir.ui.view">
+        <field name="name">dex.city.postal.code.search</field>
+        <field name="model">dex.city.postal.code</field>
+        <field name="arch" type="xml">
+            <search string="Search Areas">
+                <field name="postal_code" string="ZIP Code"/>
+                <field name="place_name" string="Area"/>
+                <field name="city_id"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <separator/>
+                <filter name="postal_active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="postal_archived" string="Archived" domain="[('active', '=', False)]" context="{'active_test': False}"/>
+                <separator/>
+                <filter name="postal_manual" string="Manual" domain="[('source_key', '=like', 'manual|%')]"/>
+                <filter name="postal_imported" string="Imported" domain="[('source_key', 'not like', 'manual|%')]"/>
+                <separator/>
+                <filter name="postal_with_city" string="With City" domain="[('city_id', '!=', False)]"/>
+                <filter name="postal_without_city" string="Without City" domain="[('city_id', '=', False)]"/>
+                <filter name="postal_with_barangays" string="With Barangays" domain="[('primary_barangay_ids', '!=', False)]"/>
+                <filter name="postal_without_barangays" string="Without Barangays" domain="[('primary_barangay_ids', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="postal_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="postal_state" string="Province / State" context="{'group_by': 'state_id'}"/>
+                    <filter name="postal_city" string="City / Municipality" context="{'group_by': 'city_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dex_city_postal_codes" model="ir.actions.act_window">
+        <field name="name">Areas</field>
+        <field name="res_model">dex.city.postal.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_postal_tree"/>
+        <field name="search_view_id" ref="view_dex_city_postal_search"/>
+        <field name="context">{'search_default_postal_active': 1}</field>
+    </record>
+
+    <record id="action_dex_city_postal_codes_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_dex_city_postal_tree"/>
+        <field name="act_window_id" ref="action_dex_city_postal_codes"/>
+    </record>
+
+    <record id="action_dex_city_postal_codes_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dex_city_postal_form"/>
+        <field name="act_window_id" ref="action_dex_city_postal_codes"/>
+    </record>
+
+    <record id="view_dex_city_data_import_tree" model="ir.ui.view">
+        <field name="name">dex.city.data.import.tree</field>
+        <field name="model">dex.city.data.import</field>
+        <field name="arch" type="xml">
+            <tree string="Global Data Imports" delete="false">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="city_rows"/>
+                <field name="ph_rows"/>
+                <field name="postal_rows"/>
+                <field name="processed_cities"/>
+                <field name="processed_postal_codes"/>
+                <field name="skipped_postal_codes"/>
+                <field name="create_date"/>
+                <field name="completed_at"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_dex_city_data_import_form" model="ir.ui.view">
+        <field name="name">dex.city.data.import.form</field>
+        <field name="model">dex.city.data.import</field>
+        <field name="arch" type="xml">
+            <form string="Global Location Data Import" create="true" edit="true" delete="false">
+                <header>
+                    <button name="action_preview" string="Download and Preview" type="object" class="oe_highlight" states="draft,failed"/>
+                    <button name="action_queue" string="Apply Update" type="object" class="oe_highlight" states="ready"/>
+                    <button name="action_retry" string="Retry" type="object" class="oe_highlight" states="failed"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,ready,queued,processing,done,failed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="cities_url"/>
+                            <field name="admin1_url"/>
+                            <field name="ph_url"/>
+                            <field name="postal_url"/>
+                            <field name="attribution"/>
+                        </group>
+                        <group>
+                            <field name="city_rows"/>
+                            <field name="ph_rows"/>
+                            <field name="postal_rows"/>
+                            <field name="processed_cities"/>
+                            <field name="processed_postal_codes"/>
+                            <field name="skipped_postal_codes"/>
+                            <field name="started_at"/>
+                            <field name="completed_at"/>
+                        </group>
+                    </group>
+                    <group string="Checksums">
+                        <field name="cities_checksum"/>
+                        <field name="ph_checksum"/>
+                        <field name="postal_checksum"/>
+                    </group>
+                    <field name="error_message" attrs="{'invisible': [('error_message', '=', False)]}"/>
+                    <field name="cities_archive" invisible="1"/>
+                    <field name="admin1_file" invisible="1"/>
+                    <field name="ph_archive" invisible="1"/>
+                    <field name="postal_archive" invisible="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dex_city_data_imports" model="ir.actions.act_window">
+        <field name="name">Global Data Imports</field>
+        <field name="res_model">dex.city.data.import</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dex_city_data_import_tree"/>
+    </record>
+
+    <menuitem id="menu_dex_city_location_data"
+              name="Location Data"
+              parent="base.menu_administration"
+              sequence="65"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_countries"
+              name="Countries"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_countries"
+              sequence="5"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_states"
+              name="Provinces / States"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_states"
+              sequence="10"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_postal_codes"
+              name="Areas"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_postal_codes"
+              sequence="25"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_cities"
+              name="Cities and ZIP Codes"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_cities"
+              sequence="20"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_barangays"
+              name="Barangays"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_barangays"
+              sequence="30"
+              groups="base.group_system"/>
+    <menuitem id="menu_dex_city_data_imports"
+              name="Global Data Imports"
+              parent="menu_dex_city_location_data"
+              action="action_dex_city_data_imports"
+              sequence="40"
+              groups="base.group_system"/>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_create_delivery_address" model="ir.ui.view">
+        <field name="name">sale.order.form.create.delivery.address</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="dex_sale_order_delivery_instruction.view_order_form_inherit_delivery_instruction"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_delivery_id2']" position="replace">
+                <label for="partner_delivery_id2" string="Delivery Address"/>
+                <div class="o_row">
+                    <field name="partner_customer_rank" invisible="1"/>
+                    <field name="partner_delivery_id2"
+                           nolabel="1"
+                           force_save="1"
+                           attrs="{'readonly':['|', ('waiting_for_delivery','=',True), ('delivery_instruction_readonly','=',True)]}"/>
+                    <button name="action_create_delivery_address"
+                            type="object"
+                            string="Create Delivery Address"
+                            icon="fa-plus"
+                            class="btn btn-secondary oe_inline"
+                            groups="sales_team.group_sale_salesman"
+                            attrs="{'invisible': ['|', '|', '|', ('partner_id', '=', False), ('partner_customer_rank', '&lt;=', 0), ('waiting_for_delivery', '=', True), ('delivery_instruction_readonly', '=', True)]}"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
